@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberJ's Blog</title>
+    <title>CyberJ's Tech Journey</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #000; /* Set background to black */
-            color: #0f0; /* Set text color to white */
-            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            background-color: #f4f4f4;
+            color: #ffffff; /* Change text color to white */
+            overflow: auto; /* Enable scrolling */
         }
         header, section {
             margin: 20px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8); /* Set background with transparency */
+            background: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1, h2 {
-            color: #0f0; /* Set headers to white */
-        }
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1; /* Place canvas behind other elements */
+            color: #ffffff; /* Change headings to white */
         }
     </style>
 </head>
 <body>
-    <canvas id="matrixCanvas"></canvas>
     <header>
-        <h1>Hey, My name is  CyberJ</h1>
-        <p>Welcome to my blog where I share my journey and accomplishments in the field of cybersecurity/Technology.</p>
+        <h1>Welcome to CyberJ's Tech Journey</h1>
+        <p>Explore my journey, skills, and projects in the field of technology and cybersecurity.</p>
     </header>
     <section>
         <h2>About Me</h2>
-        <p>I'm a Cybersecurity Enthusiast, learning to code my own website from scratch! I'm passionate about gaining hands-on experience in cybersecurity and exploring new technologies.</p>
+        <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
     </section>
     <section>
-        <h2>What I'm Working On</h2>
-        <p>I'm dedicated to enhancing my cybersecurity skills and knowledge. Currently, I'm coding this website to showcase my projects and achievements, demonstrating my curiosity and eagerness to learn.</p>
+        <h2>Current Projects</h2>
+        <p>I'm actively working on several projects to build my skills and knowledge:</p>
+        <ul>
+            <li>Creating and improving my personal website from scratch.</li>
+            <li>Preparing for the AWS Cloud Practitioner certification.</li>
+            <li>Following the SOC Level 1 Roadmap on TryHackMe.</li>
+        </ul>
     </section>
     <section>
         <h2>Accomplishments</h2>
@@ -52,14 +50,6 @@
             <li>Successfully created and continuously improving my personal website from scratch.</li>
             <li>Gained hands-on experience in various cybersecurity tools and techniques.</li>
             <li>Reduced security issues by 20% in 30 days through system updates and vulnerability assessments.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Current Projects and Certifications</h2>
-        <ul>
-            <li>Working on the AWS Cloud Practitioner certification.</li>
-            <li>Currently following the SOC Level 1 Roadmap on TryHackMe.</li>
-            <li>Building and improving a personal website to showcase my cybersecurity journey.</li>
         </ul>
     </section>
     <section>
@@ -75,7 +65,7 @@
             <li>Oversaw software licensing for various platforms and third-party vendors, ensuring compliance and optimal resource utilization.</li>
             <li>Documented device configurations, troubleshooting steps, and user interactions for knowledge sharing and future reference.</li>
             <li>Consulted with customers to recommend solutions and configuration changes, ensuring optimal functionality and satisfaction with hardware and software solutions.</li>
-            <li>Served as a dedicated point of contact for onsite support, ensuring prompt resolution of technical issues with exceptional service delivery to the user.</li>
+            <li>Served as a dedicated point of contact for onsite support, ensuring prompt resolution for technical issues with exceptional service delivery to the user.</li>
             <li>Developed Jira automation and canned responses to increase proactivity and efficiency for the Jira project.</li>
         </ul>
         <h3>Marchman Technical College | Cybersecurity Apprentice (08/2022 - 04/2023)</h3>
@@ -102,53 +92,5 @@
             <li>Troubleshooting, Windows OS, Jira, ABM, GPM, Documentation, Configuration, MFA</li>
         </ul>
     </section>
-    <script>
-        const canvas = document.getElementById('matrixCanvas');
-        const context = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const nums = '0123456789';
-
-        const alphabet = katakana + latin + nums;
-
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-
-        const rainDrops = [];
-
-        for (let x = 0; x < columns; x++) {
-            rainDrops[x] = 1;
-        }
-
-        const draw = () => {
-            context.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            context.fillRect(0, 0, canvas.width, canvas.height);
-
-            context.fillStyle = '#0f0';
-            context.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < rainDrops.length; i++) {
-                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                }
-                rainDrops[i]++;
-            }
-        };
-
-        setInterval(draw, 30);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
-
