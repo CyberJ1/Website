@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #000; /* Set background to black */
-            color: #0f0; /* Set text color to green */
+            color: #0f0; /* Set text color to white */
             overflow: hidden; /* Hide overflow to prevent scrollbars */
         }
         header, section {
@@ -22,7 +22,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1, h2 {
-            color: #0f0; /* Set headers to green */
+            color: #0f0; /* Set headers to white */
         }
         canvas {
             position: absolute;
