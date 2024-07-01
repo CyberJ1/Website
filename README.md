@@ -10,19 +10,39 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #ffffff; /* Change text color to white */
-            overflow: auto; /* Enable scrolling */
+            background-color: black;
+            color: white; /* Change text color to white */
+            overflow-y: scroll; /* Enable vertical scrolling */
         }
         header, section {
             margin: 20px;
             padding: 20px;
-            background: #fff;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         h1, h2 {
-            color: #ffffff; /* Change headings to white */
+            color: white; /* Change headings to white */
+        }
+        header {
+            text-align: center;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'), 
+                        url('https://i.pinimg.com/originals/2a/8e/9b/2a8e9b30172e4c3b26e1ea9c287b0d6e.gif'); 
+            background-repeat: repeat, no-repeat;
+            background-position: center;
+            background-size: cover;
         }
     </style>
 </head>
