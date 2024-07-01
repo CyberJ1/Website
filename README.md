@@ -30,23 +30,20 @@
         section {
             margin-bottom: 40px;
         }
-        body::before {
-            content: "";
+        /* Canvas styling for the matrix effect */
+        #matrixCanvas {
             position: fixed;
             top: 0;
             left: 0;
+            z-index: -1;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'), 
-                        url('https://i.pinimg.com/originals/2a/8e/9b/2a8e9b30172e4c3b26e1ea9c287b0d6e.gif'); 
-            background-repeat: repeat, no-repeat;
-            background-position: center;
-            background-size: cover;
+            background: black;
         }
     </style>
 </head>
 <body>
+    <canvas id="matrixCanvas"></canvas>
     <header>
         <h1>Welcome to CyberJ's Tech Journey</h1>
         <p>Explore my journey, skills, and projects in the field of technology and cybersecurity.</p>
@@ -110,7 +107,7 @@
             <li>NIST Frameworks, Analytical Skills, Wireshark, VMware, Digital Forensics</li>
             <li>AWS, Public Speaking, Active Directory, Azure, Intune, M365</li>
             <li>Troubleshooting, Windows OS, Jira, ABM, GPM, Documentation, Configuration, MFA</li>
-     </ul>
+        </ul>
     </section>
     <script>
         const canvas = document.getElementById('matrixCanvas');
