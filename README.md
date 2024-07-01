@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberJ's Tech Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,6 +52,7 @@
     <section>
         <h2>About Me</h2>
         <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/jose-maldonado-cyberlink/" target="_blank" style="color: #0e76a8;"><i class="fab fa-linkedin"></i> LinkedIn</a>.</p>
     </section>
     <section>
         <h2>Current Projects</h2>
