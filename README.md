@@ -39,7 +39,8 @@
             z-index: -1;
             width: 100%;
             height: 100%;
-            background: black;
+            background: black url('hacker.png') no-repeat center center;
+            background-size: cover;
         }
     </style>
 </head>
@@ -52,7 +53,7 @@
     <section>
         <h2>About Me</h2>
         <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/jose-maldonado-cyberlink/" target="_blank" style="color: #0e76a8;"><i class="fab fa-linkedin"></i> LinkedIn</a>.</p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/your-profile-link" target="_blank" style="color: #0e76a8;"><i class="fab fa-linkedin"></i> LinkedIn</a>.</p>
     </section>
     <section>
         <h2>Current Projects</h2>
@@ -142,21 +143,14 @@
 
             for (let i = 0; i < rainDrops.length; i++) {
                 const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                // Adjust the falling effect to avoid the hacker image area
+                const xPos = i * fontSize;
+                const yPos = rainDrops[i] * fontSize;
+                const imgHeight = 300;  // Adjust this based on the height of the hacker image
+                const imgWidth = 400;   // Adjust this based on the width of the hacker image
+                const imgX = (canvas.width - imgWidth) / 2;
+                const imgY = (canvas.height - imgHeight) / 2;
 
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                }
-                rainDrops[i]++;
-            }
-        };
-
-        setInterval(draw, 30);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
-</body>
-</html>
+                if (!(xPos > imgX && xPos < imgX + imgWidth && yPos > imgY && yPos < imgY + imgHeight)) {
+                    context.fillText(text, xPos
