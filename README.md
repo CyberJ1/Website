@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,18 +12,18 @@
             margin: 0;
             padding: 0;
             background-color: black;
-            color: white; /* Change text color to white */
-            overflow-y: scroll; /* Enable vertical scrolling */
+            color: white;
+            overflow-y: scroll;
         }
         header, section {
             margin: 20px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         h1, h2 {
-            color: white; /* Change headings to white */
+            color: white;
         }
         header {
             text-align: center;
@@ -39,8 +39,7 @@
             z-index: -1;
             width: 100%;
             height: 100%;
-            background: black url('hacker.png') no-repeat center center;
-            background-size: cover;
+            background: black;
         }
     </style>
 </head>
@@ -134,23 +133,42 @@
             rainDrops[x] = 1;
         }
 
-        const draw = () => {
-            context.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            context.fillRect(0, 0, canvas.width, canvas.height);
+        const hackerImage = new Image();
+        hackerImage.src = 'https://images.wallpapersden.com/image/download/anonymous-hacker-working_bGllZ2mUmZqaraWkpJRmaGhrrWxrbQ.jpg'
+        hackerImage.onload = () => {
+            const imgHeight = 368;
+            const imgWidth = 639; 
+            const imgX = (canvas.width - imgWidth) / 2;
+            const imgY = (canvas.height - imgHeight) / 2;
 
-            context.fillStyle = '#0f0';
-            context.font = fontSize + 'px monospace';
+            const draw = () => {
+                context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                context.fillRect(0, 0, canvas.width, canvas.height);
 
-            for (let i = 0; i < rainDrops.length; i++) {
-                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                
-                // Adjust the falling effect to avoid the hacker image area
-                const xPos = i * fontSize;
-                const yPos = rainDrops[i] * fontSize;
-                const imgHeight = 300;  // Adjust this based on the height of the hacker image
-                const imgWidth = 400;   // Adjust this based on the width of the hacker image
-                const imgX = (canvas.width - imgWidth) / 2;
-                const imgY = (canvas.height - imgHeight) / 2;
+                context.drawImage(hackerImage, imgX, imgY, imgWidth, imgHeight);
 
-                if (!(xPos > imgX && xPos < imgX + imgWidth && yPos > imgY && yPos < imgY + imgHeight)) {
-                    context.fillText(text, xPos
+                context.fillStyle = '#0f0';
+                context.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < rainDrops.length; i++) {
+                    const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                    const xPos = i * fontSize;
+                    const yPos = rainDrops[i] * fontSize;
+
+                    if (!(xPos > imgX && xPos < imgX + imgWidth && yPos > imgY && yPos < imgY + imgHeight)) {
+                        context.fillText(text, xPos, yPos);
+                    }
+
+                    if (yPos > canvas.height && Math.random() > 0.975) {
+                        rainDrops[i] = 0;
+                    }
+
+                    rainDrops[i]++;
+                }
+            };
+
+            setInterval(draw, 30);
+        };
+    </script>
+</body>
+</html>
