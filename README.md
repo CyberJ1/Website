@@ -134,10 +134,10 @@
         }
 
         const hackerImage = new Image();
-        hackerImage.src = 'https://images.wallpapersden.com/image/download/anonymous-hacker-working_bGllZ2mUmZqaraWkpJRmaGhrrWxrbQ.jpg'
+        hackerImage.src = 'https://images.wallpapersden.com/image/download/anonymous-hacker-working_bGllZ2mUmZqaraWkpJRmaGhrrWxrbQ.jpg'; // Use the URL from your image hosting service
         hackerImage.onload = () => {
-            const imgHeight = 368;
-            const imgWidth = 639; 
+            const imgHeight = 368; // Adjust based on your image
+            const imgWidth = 639; // Adjust based on your image
             const imgX = (canvas.width - imgWidth) / 2;
             const imgY = (canvas.height - imgHeight) / 2;
 
