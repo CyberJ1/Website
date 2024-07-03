@@ -12,7 +12,15 @@
             background-size: cover;
             color: #fff;
             overflow-x: hidden; /* Hide horizontal overflow */
-            overflow-y: scroll; /* Enable vertical scrolling */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
 
         h1, h2 {
@@ -21,11 +29,7 @@
         }
 
         section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
+            margin-bottom: 30px;
         }
 
         a {
@@ -48,11 +52,13 @@
 
         /* Monitor effect */
         .monitor {
-            position: absolute;
             width: 100px;
             height: 70px;
             background: #0ff;
             animation: monitorEffect 1s infinite;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 60px;
         }
 
         @keyframes monitorEffect {
@@ -73,6 +79,13 @@
 
         .signal {
             animation: signal 2s infinite alternate;
+            position: relative;
+            left: 0;
+            top: 30%;
+            width: 100%;
+            height: 5px;
+            background: #0ff;
+            animation: monitorEffect 1s infinite;
         }
     </style>
 </head>
@@ -80,62 +93,24 @@
     <header>
         <h1 class="flicker">Welcome to CyberJ's Tech Journey</h1>
     </header>
-    <section>
-        <h2>About Me</h2>
-        <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>.</p>
-    </section>
-    <section>
-        <h2>Current Projects</h2>
-        <ul>
-            <li>Creating and improving my personal website from scratch.</li>
-            <li>Preparing for the AWS Cloud Practitioner certification.</li>
-            <li>Following the SOC Level 1 Roadmap on TryHackMe.</li>
-        </ul>
-    </section>
-    <script>
-        // Simulate monitor effect
-        const monitors = [
-            {top: '20%', left: '30%'},
-            {top: '25%', left: '50%'},
-            {top: '40%', left: '70%'}
-        ];
-
-        monitors.forEach((monitor, index) => {
-            const monitorElement = document.createElement('div');
-            monitorElement.className = 'monitor';
-            monitorElement.style.top = monitor.top;
-            monitorElement.style.left = monitor.left;
-            document.body.appendChild(monitorElement);
-        });
-
-        // Simulate signal traveling through wires
-        function createSignal() {
-            const signal = document.createElement('div');
-            signal.className = 'signal';
-            signal.style.position = 'absolute';
-            signal.style.width = '5px';
-            signal.style.height = '5px';
-            signal.style.backgroundColor = '#0ff';
-            signal.style.borderRadius = '50%';
-            signal.style.top = '50%';
-            signal.style.left = '0';
-            document.body.appendChild(signal);
-
-            let position = 0;
-            function animateSignal() {
-                position += 2;
-                signal.style.left = position + 'px';
-                if (position < window.innerWidth) {
-                    requestAnimationFrame(animateSignal);
-                } else {
-                    signal.remove();
-                    createSignal();
-                }
-            }
-            animateSignal();
-        }
-        createSignal();
-    </script>
+    <div class="container">
+        <section>
+            <h2>About Me</h2>
+            <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>.</p>
+        </section>
+        <section>
+            <h2>Current Projects</h2>
+            <ul>
+                <li>Creating and improving my personal website from scratch.</li>
+                <li>Preparing for the AWS Cloud Practitioner certification.</li>
+                <li>Following the SOC Level 1 Roadmap on TryHackMe.</li>
+            </ul>
+        </section>
+        <section>
+            <div class="monitor"></div>
+            <div class="signal"></div>
+        </section>
+    </div>
 </body>
 </html>
