@@ -4,159 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberJ's Tech Journey</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white; /* Change text color to white */
-            overflow-y: scroll; /* Enable vertical scrolling */
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
         }
-        header, section {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-        h1, h2 {
-            color: white; /* Change headings to white */
-        }
+
         header {
+            background: url('your-header-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        header p {
+            font-size: 24px;
+            margin: 20px 0 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #000;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .services, .projects, .contact {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .services div, .projects div, .contact div {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 30%;
             text-align: center;
         }
-        section {
-            margin-bottom: 40px;
+
+        footer {
+            background: #000;
+            padding: 20px 0;
+            text-align: center;
         }
-        /* Canvas styling for the matrix effect */
-        #matrixCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            background: black;
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .futuristic {
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #0ff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #0ff;
+        }
+
+        .button:hover {
+            background: #00f;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <canvas id="matrixCanvas"></canvas>
-    <header>
-        <h1>Welcome to CyberJ's Tech Journey</h1>
-        <p>Explore my journey, skills, and projects in the field of technology and cybersecurity.</p>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/jose-maldonado-cyberlink/" target="_blank" style="color: #0e76a8;"><i class="fab fa-linkedin"></i> LinkedIn</a>.</p>
-    </section>
-    <section>
-        <h2>Current Projects</h2>
-        <p>I'm actively working on several projects to build my skills and knowledge:</p>
-        <ul>
-            <li>Creating and improving my personal website from scratch.</li>
-            <li>Preparing for the AWS Cloud Practitioner certification.</li>
-            <li>Following the SOC Level 1 Roadmap on TryHackMe.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Accomplishments</h2>
-        <ul>
-            <li>Successfully created and continuously improving my personal website from scratch.</li>
-            <li>Gained hands-on experience in various cybersecurity tools and techniques.</li>
-            <li>Reduced security issues by 20% in 30 days through system updates and vulnerability assessments.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Experience</h2>
-        <h3>Power Design, Inc. | Bilingual IT Support Technician (2024 - Present)</h3>
-        <ul>
-            <li>Managed user accounts and groups in Active Directory (AD), ensuring compliance with access policies.</li>
-            <li>Administered Microsoft Intune, implementing Multi-Factor Authentication (MFA) and synchronizing company devices for security compliance.</li>
-            <li>Configured iOS and Windows devices for employees, ensuring seamless integration and functionality within the network environment and MDM policies.</li>
-            <li>Triage and managed an active ticket queue, ensuring prompt resolution within the SLA to avoid breaches.</li>
-            <li>Managed problem recognition, research, isolation, resolution, and follow-up for routine and complex issues with precision and efficiency.</li>
-            <li>Proficiently identified, diagnosed, and resolved technical issues onsite through hands-on support and extensive training.</li>
-            <li>Oversaw software licensing for various platforms and third-party vendors, ensuring compliance and optimal resource utilization.</li>
-            <li>Documented device configurations, troubleshooting steps, and user interactions for knowledge sharing and future reference.</li>
-            <li>Consulted with customers to recommend solutions and configuration changes, ensuring optimal functionality and satisfaction with hardware and software solutions.</li>
-            <li>Served as a dedicated point of contact for onsite support, ensuring prompt resolution for technical issues with exceptional service delivery to the user.</li>
-            <li>Developed Jira automation and canned responses to increase proactivity and efficiency for the Jira project.</li>
-        </ul>
-        <h3>Marchman Technical College | Cybersecurity Apprentice (08/2022 - 04/2023)</h3>
-        <ul>
-            <li>Implemented security measures to safeguard devices, conducted vulnerability assessments, collaborated with others to identify and mitigate security risks, and monitored network activities to enhance system defense.</li>
-            <li>Installed system updates to address vulnerabilities and reduce security issues by 20% in 30 days.</li>
-            <li>Managed user accounts and groups in Active Directory (AD), ensuring compliance with access policies.</li>
-            <li>Over 150 hours as an Information Security Admin creating and analyzing configurations with security policies using Group Policy Management.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Education</h2>
-        <ul>
-            <li>FAMU University | Cybersecurity Bootcamp Program (04/2023 - 10/2023)</li>
-            <li>Fred K. Marchman Technical College | Applied Cyber Security Program (08/2022 - 04/2023)</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Skills & Abilities</h2>
-        <ul>
-            <li>Communication, Leadership, Network Security, Bilingual, Splunk</li>
-            <li>NIST Frameworks, Analytical Skills, Wireshark, VMware, Digital Forensics</li>
-            <li>AWS, Public Speaking, Active Directory, Azure, Intune, M365</li>
-            <li>Troubleshooting, Windows OS, Jira, ABM, GPM, Documentation, Configuration, MFA</li>
-        </ul>
-    </section>
-    <script>
-        const canvas = document.getElementById('matrixCanvas');
-        const context = canvas.getContext('2d');
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+<header>
+    <h1 class="futuristic">CyberJ's Tech Journey</h1>
+    <p>Driving Digital Transformation</p>
+</header>
 
-        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const nums = '0123456789';
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-        const alphabet = katakana + latin + nums;
+<section id="about">
+    <h2>About Me</h2>
+    <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
+</section>
 
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
+<section id="services">
+    <h2>Services</h2>
+    <div class="services">
+        <div>
+            <h3>Consulting</h3>
+            <p>Providing best practices for beginner computer users.</p>
+        </div>
+        <div>
+            <h3>Development</h3>
+            <p>Building and improving personal websites from scratch.</p>
+        </div>
+        <div>
+            <h3>Certification Prep</h3>
+            <p>Guidance on preparing for certifications like AWS Cloud Practitioner.</p>
+        </div>
+    </div>
+</section>
 
-        const rainDrops = [];
+<section id="projects">
+    <h2>Current Projects</h2>
+    <div class="projects">
+        <div>
+            <h3>Website Development</h3>
+            <p>Creating and improving my personal website.</p>
+        </div>
+        <div>
+            <h3>AWS Certification</h3>
+            <p>Preparing for the AWS Cloud Practitioner certification.</p>
+        </div>
+        <div>
+            <h3>Cybersecurity Training</h3>
+            <p>Following the SOC Level 1 Roadmap on TryHackMe.</p>
+        </div>
+    </div>
+</section>
 
-        for (let x = 0; x < columns; x++) {
-            rainDrops[x] = 1;
-        }
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact">
+        <div>
+            <h3>Email</h3>
+            <p><a href="mailto:your-email@example.com" class="button">Send Email</a></p>
+        </div>
+        <div>
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/your-linkedin-profile" class="button" target="_blank">Connect on LinkedIn</a></p>
+        </div>
+        <div>
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/CyberJ" class="button" target="_blank">View GitHub</a></p>
+        </div>
+    </div>
+</section>
 
-        const draw = () => {
-            context.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            context.fillRect(0, 0, canvas.width, canvas.height);
+<footer>
+    <p>© 2024 CyberJ. All rights reserved.</p>
+</footer>
 
-            context.fillStyle = '#0f0';
-            context.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < rainDrops.length; i++) {
-                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                }
-                rainDrops[i]++;
-            }
-        };
-
-        setInterval(draw, 30);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
