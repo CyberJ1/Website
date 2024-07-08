@@ -4,188 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberJ's Tech Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
             background-color: black;
-            color: #fff;
-            overflow: hidden;
+            color: white; /* Change text color to white */
+            overflow-y: scroll; /* Enable vertical scrolling */
         }
-
-        h1, h2 {
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        section {
-            max-width: 800px;
-            margin: 50px auto;
+        header, section {
+            margin: 20px;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
-
-        a {
-            color: #0ff;
+        h1, h2 {
+            color: white; /* Change headings to white */
         }
-
-        .flicker {
-            animation: flicker 1.5s infinite alternate;
+        header {
+            text-align: center;
         }
-
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                opacity: 1;
-            }
-            20%, 24%, 55% {
-                opacity: 0;
-            }
+        section {
+            margin-bottom: 40px;
         }
-
-        .matrix {
+        /* Canvas styling for the matrix effect */
+        #matrixCanvas {
             position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
             width: 100%;
             height: 100%;
-            z-index: -1;
             background: black;
-            overflow: hidden;
-        }
-
-        .matrix canvas {
-            display: block;
-        }
-
-        .monitor {
-            width: 100px;
-            height: 70px;
-            background: #0ff;
-            position: absolute;
-            animation: monitorEffect 1s infinite;
-        }
-
-        @keyframes monitorEffect {
-            0% { background: #0ff; }
-            50% { background: #00f; }
-            100% { background: #0ff; }
-        }
-
-        .wire {
-            width: 5px;
-            height: 100px;
-            background: #333;
-            position: absolute;
-            box-shadow: 0 0 5px #0ff;
         }
     </style>
 </head>
 <body>
-    <div class="matrix">
-        <canvas id="matrixCanvas"></canvas>
-    </div>
+    <canvas id="matrixCanvas"></canvas>
     <header>
         <h1>Welcome to CyberJ's Tech Journey</h1>
+        <p>Explore my journey, skills, and projects in the field of technology and cybersecurity.</p>
     </header>
     <section>
         <h2>About Me</h2>
         <p>I'm CyberJ, a passionate Cybersecurity Enthusiast, learning to code my own website from scratch! I'm dedicated to enhancing my skills and exploring new technologies to stay at the forefront of the tech industry.</p>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/jose-maldonado-cyberlink/" target="_blank">LinkedIn</a>.</p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/jose-maldonado-cyberlink/" target="_blank" style="color: #0e76a8;"><i class="fab fa-linkedin"></i> LinkedIn</a>.</p>
     </section>
     <section>
         <h2>Current Projects</h2>
-        <h3>SOC Level 1 Pathway (In progress)</h3>
-        <p>Comprehensive training in Security Operations Center (SOC) fundamentals.</p>
+        <p>I'm actively working on several projects to build my skills and knowledge:</p>
         <ul>
-            <li>Hands-on experience in incident response and threat detection.</li>
-            <li>Mastery of Security Information and Event Management (SIEM) tools and techniques.</li>
-            <li>Development of skills in monitoring and analyzing security alerts.</li>
+            <li>Creating and improving my personal website from scratch.</li>
+            <li>Preparing for the AWS Cloud Practitioner certification.</li>
+            <li>Following the SOC Level 1 Roadmap on TryHackMe.</li>
         </ul>
-        <h3>Skills (Security Engineer Pathway)</h3>
-        <ul>
-            <li>Network Security</li>
-            <li>Security Engineering</li>
-            <li>System Hardening</li>
-            <li>Vulnerability Assessment</li>
-            <li>Secure System Design</li>
-        </ul>
-        <h3>Preparing for AWS Cloud Practitioner Certification</h3>
     </section>
-    <div class="monitor" style="top: 20%; left: 30%;"></div>
-    <div class="monitor" style="top: 25%; left: 50%;"></div>
-    <div class="monitor" style="top: 40%; left: 70%;"></div>
-
-    <div class="wire" style="top: 10%; left: 20%; height: 50%;"></div>
-    <div class="wire" style="top: 15%; left: 45%; height: 60%;"></div>
-    <div class="wire" style="top: 35%; left: 60%; height: 70%;"></div>
-
+    <section>
+        <h2>Accomplishments</h2>
+        <ul>
+            <li>Successfully created and continuously improving my personal website from scratch.</li>
+            <li>Gained hands-on experience in various cybersecurity tools and techniques.</li>
+            <li>Reduced security issues by 20% in 30 days through system updates and vulnerability assessments.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Experience</h2>
+        <h3>Power Design, Inc. | Bilingual IT Support Technician (2024 - Present)</h3>
+        <ul>
+            <li>Managed user accounts and groups in Active Directory (AD), ensuring compliance with access policies.</li>
+            <li>Administered Microsoft Intune, implementing Multi-Factor Authentication (MFA) and synchronizing company devices for security compliance.</li>
+            <li>Configured iOS and Windows devices for employees, ensuring seamless integration and functionality within the network environment and MDM policies.</li>
+            <li>Triage and managed an active ticket queue, ensuring prompt resolution within the SLA to avoid breaches.</li>
+            <li>Managed problem recognition, research, isolation, resolution, and follow-up for routine and complex issues with precision and efficiency.</li>
+            <li>Proficiently identified, diagnosed, and resolved technical issues onsite through hands-on support and extensive training.</li>
+            <li>Oversaw software licensing for various platforms and third-party vendors, ensuring compliance and optimal resource utilization.</li>
+            <li>Documented device configurations, troubleshooting steps, and user interactions for knowledge sharing and future reference.</li>
+            <li>Consulted with customers to recommend solutions and configuration changes, ensuring optimal functionality and satisfaction with hardware and software solutions.</li>
+            <li>Served as a dedicated point of contact for onsite support, ensuring prompt resolution for technical issues with exceptional service delivery to the user.</li>
+            <li>Developed Jira automation and canned responses to increase proactivity and efficiency for the Jira project.</li>
+        </ul>
+        <h3>Marchman Technical College | Cybersecurity Apprentice (08/2022 - 04/2023)</h3>
+        <ul>
+            <li>Implemented security measures to safeguard devices, conducted vulnerability assessments, collaborated with others to identify and mitigate security risks, and monitored network activities to enhance system defense.</li>
+            <li>Installed system updates to address vulnerabilities and reduce security issues by 20% in 30 days.</li>
+            <li>Managed user accounts and groups in Active Directory (AD), ensuring compliance with access policies.</li>
+            <li>Over 150 hours as an Information Security Admin creating and analyzing configurations with security policies using Group Policy Management.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Education</h2>
+        <ul>
+            <li>FAMU University | Cybersecurity Bootcamp Program (04/2023 - 10/2023)</li>
+            <li>Fred K. Marchman Technical College | Applied Cyber Security Program (08/2022 - 04/2023)</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Skills & Abilities</h2>
+        <ul>
+            <li>Communication, Leadership, Network Security, Bilingual, Splunk</li>
+            <li>NIST Frameworks, Analytical Skills, Wireshark, VMware, Digital Forensics</li>
+            <li>AWS, Public Speaking, Active Directory, Azure, Intune, M365</li>
+            <li>Troubleshooting, Windows OS, Jira, ABM, GPM, Documentation, Configuration, MFA</li>
+        </ul>
+    </section>
     <script>
         const canvas = document.getElementById('matrixCanvas');
-        const ctx = canvas.getContext('2d');
+        const context = canvas.getContext('2d');
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+
+        const alphabet = katakana + latin + nums;
+
         const fontSize = 16;
         const columns = canvas.width / fontSize;
-        const drops = Array.from({ length: columns }, () => 1);
 
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        const rainDrops = [];
 
-            ctx.fillStyle = '#0F0';
-            ctx.font = `${fontSize}px monospace`;
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-
-                drops[i]++;
-            }
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
         }
 
-        setInterval(draw, 33);
+        const draw = () => {
+            context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            context.fillStyle = '#0f0';
+            context.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+
+        setInterval(draw, 30);
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            drops.length = Math.floor(canvas.width / fontSize);
-            for (let i = 0; i < drops.length; i++) {
-                drops[i] = 1;
-            }
         });
-
-        function createFlickeringLightEffect(element, intensity) {
-            setInterval(() => {
-                element.style.opacity = (Math.random() * (1 - intensity) + intensity).toString();
-            }, 50);
-        }
-
-        function createMonitorEffect() {
-            const monitors = document.querySelectorAll('.monitor');
-            monitors.forEach(monitor => {
-                setInterval(() => {
-                    monitor.style.backgroundColor = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
-                }, 100);
-            });
-        }
-
-        function createSignalEffect() {
-            const wires = document.querySelectorAll('.wire');
-            wires.forEach(wire => {
-                setInterval(() => {
-                    wire.style.boxShadow = `0 0 ${Math.random()*10}px 5px #0ff`;
-                }, 200);
-            });
-        }
-
-        createMonitorEffect();
-        createSignalEffect();
     </script>
 </body>
 </html>
